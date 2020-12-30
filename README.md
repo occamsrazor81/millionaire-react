@@ -10,3 +10,11 @@ Made using react-js
 <li>options to be added soon (adding, deleting and editing questions)</li>
 <li>also choosing a language will be added soon (currently only croatian)</li>
 </ul>
+
+<b>Note:</b> To run the quiz you need to: 
+<ol>
+  <li>navigate to main directory</li>
+  <li>run command <i>npm install</i> - to install dependencies (node modules)</li>
+  <li>run command <i>npm start</i> - to start the quiz in localhost:3000</li>
+  <li>there is possible that quiz will be publicly available after completion</li> 
+</ol>
