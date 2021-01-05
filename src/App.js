@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+//import components
+import Navbar from './components/Navbar';
+
 //import pages
 import Home from './pages/Home';
 import Error from './pages/Error';
@@ -8,10 +11,10 @@ import Options from './pages/Options';
 import Highscores from './pages/Highscores';
 import Game from './pages/Game';
 import EndScreen from './pages/EndScreen';
-
-//import components
-import Navbar from './components/Navbar';
 import NewHighScore from './pages/NewHighScore';
+import QuestionList from './pages/QuestionList';
+import EditQuestion from './pages/EditQuestion';
+import AddNewQuestion from './pages/AddNewQuestion';
 
 function App() {
   return (
@@ -35,6 +38,15 @@ function App() {
         </Route>
         <Route path='/new_highscore'>
           <NewHighScore />
+        </Route>
+        <Route path='/question_list'>
+          <QuestionList />
+        </Route>
+        <Route path='/edit_question/:id'>
+          <EditQuestion />
+        </Route>
+        <Route path='/add_question'>
+          <AddNewQuestion />
         </Route>
         <Route path='*'>
           <Error />

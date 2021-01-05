@@ -90,6 +90,85 @@ const reducer = (state, action) => {
       ...state,
       chosenHighscores: chosenHS,
     };
+  } else if (action.type === 'ADD_NEW_QUESTION') {
+    const {
+      category,
+      difficulty,
+      question,
+      answers,
+      correct,
+      fifty_fifty,
+      ask_the_audience,
+      phone_a_friend,
+    } = action.payload;
+
+    let new_audience = ask_the_audience.map((ask) => ask + '%');
+
+    let idArr = state.millionaire.map((singleMill) => singleMill.id);
+    let newId = Math.max(...idArr) + 1;
+
+    let newMillionaireItem = {
+      id: newId,
+      category,
+      difficulty,
+      question,
+      answers,
+      correct,
+      fifty_fifty,
+      ask_the_audience: new_audience,
+      phone_a_friend,
+    };
+
+    let newMillionaire = [...state.millionaire, newMillionaireItem];
+    // newMillionaire.push(newMillionaireItem);
+
+    localStorage.setItem('millionaire', JSON.stringify(newMillionaire));
+
+    return { ...state, millionaire: newMillionaire };
+  } else if (action.type === 'SAVE_EDITED_QUESTION') {
+    const {
+      category,
+      difficulty,
+      question,
+      answers,
+      correct,
+      fifty_fifty,
+      ask_the_audience,
+      phone_a_friend,
+    } = action.payload.vars;
+
+    const id = action.payload.id;
+
+    let new_audience = ask_the_audience.map((ask) => ask + '%');
+
+    // let idArr = state.millionaire.map((singleMill) => singleMill.id);
+    // let newId = Math.max(...idArr) + 1;
+
+    let editedMillionaireItem = {
+      id: parseInt(id),
+      category,
+      difficulty,
+      question,
+      answers,
+      correct,
+      fifty_fifty,
+      ask_the_audience: new_audience,
+      phone_a_friend,
+    };
+
+    let newMillionaire = state.millionaire;
+    newMillionaire = newMillionaire.map((singleMill) => {
+      if (singleMill.id === editedMillionaireItem.id) {
+        return editedMillionaireItem;
+      } else {
+        return singleMill;
+      }
+    });
+
+    console.log(newMillionaire);
+    localStorage.setItem('millionaire', JSON.stringify(newMillionaire));
+
+    return { ...state, millionaire: newMillionaire };
   } else throw new Error('no matching action type');
 };
 

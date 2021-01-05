@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Options = () => {
   return (
-    <main>
+    <main className='options-main'>
       <h2>Options</h2>
-      <ul>
-        <li>add new question</li>
-        <li>delete question</li>
-        <li>edit question</li>
-        <li>change language</li>
+      <ul className='options-list'>
+        <li className='single-option'>
+          <Link to='/question_list'>edit questions</Link>
+        </li>
+        <li className='single-option'>
+          <Link to='/'>change language</Link>
+        </li>
       </ul>
     </main>
   );

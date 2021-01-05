@@ -16,7 +16,7 @@ const Home = () => {
 
   if (!isPlaying) {
     return (
-      <div className='radio container'>
+      <div className='radio-container'>
         <form onSubmit={handleStart}>
           <input
             type='radio'

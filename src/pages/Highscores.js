@@ -19,7 +19,11 @@ const Highscores = () => {
     <main className='highscore-main'>
       <h2>Highscores</h2>
       <div className='select-div'>
-        <select name='difficulty' id='difficulty' onChange={handleSelectChange}>
+        <select
+          name='difficulty'
+          className='difficulty'
+          onChange={handleSelectChange}
+        >
           <option value='easy'>easy</option>
           <option value='medium'>medium</option>
           <option value='hard'>hard</option>
