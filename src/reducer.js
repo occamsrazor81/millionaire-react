@@ -169,6 +169,12 @@ const reducer = (state, action) => {
     localStorage.setItem('millionaire', JSON.stringify(newMillionaire));
 
     return { ...state, millionaire: newMillionaire };
+  } else if (action.type === 'DELETE_QUESTION') {
+    let newMillionaire = state.millionaire.filter(
+      (singleMill) => singleMill.id !== action.payload
+    );
+
+    return { ...state, millionaire: newMillionaire };
   } else throw new Error('no matching action type');
 };
 

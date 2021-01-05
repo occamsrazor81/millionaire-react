@@ -4,11 +4,15 @@ import {
   AiOutlineEdit,
   AiOutlineDelete,
   AiOutlineAppstoreAdd,
+  AiOutlineCheck,
 } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 const QuestionList = () => {
-  const { millionaire } = useGlobalContext();
+  const { millionaire, dispatch } = useGlobalContext();
+
+  const [toDeleteId, setToDeleteId] = React.useState(null);
+
   return (
     <main className='question-list-main'>
       <h2>All questions</h2>
@@ -73,9 +77,22 @@ const QuestionList = () => {
                       </Link>
                     </li>
                     <li className='millionaire-option-delete'>
-                      <Link to='/'>
-                        <AiOutlineDelete className='millionaire-option-icon-delete' />
-                      </Link>
+                      <button
+                        onMouseOver={() => setToDeleteId(id)}
+                        onMouseLeave={() => setToDeleteId(null)}
+                      >
+                        {id === toDeleteId ? (
+                          <span
+                            onClick={() =>
+                              dispatch({ type: 'DELETE_QUESTION', payload: id })
+                            }
+                          >
+                            <AiOutlineCheck className='check-icon' />
+                          </span>
+                        ) : (
+                          <AiOutlineDelete className='millionaire-option-icon-delete' />
+                        )}
+                      </button>
                     </li>
                   </ul>
                 </td>

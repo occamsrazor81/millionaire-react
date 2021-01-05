@@ -657,7 +657,13 @@ select::-ms-expand {
   height: 50%;
 }
 
-.millionaire-options ul li a {
+.millionaire-options ul li button {
+  background-color: inherit;
+  border: none;
+}
+
+.millionaire-options ul li a,
+.millionaire-options ul li button {
   display: block;
   width: 100%;
   height: 100%;
@@ -665,9 +671,27 @@ select::-ms-expand {
   color: var(--whiteColor);
 }
 
-.millionaire-options ul li a:hover {
+.millionaire-options ul li a:hover,
+.millionaire-options ul li button:hover {
   background-color: var(--correctColor);
   opacity: 90%;
+}
+
+.millionaire-options ul li button span {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+}
+
+.millionaire-options ul li button span .check-icon {
+  position: absolute;
+  top: 40%;
+  left: 40%;
 }
 
 .millionaire-option-icon-edit {
@@ -679,9 +703,10 @@ select::-ms-expand {
 .millionaire-option-icon-delete {
   position: absolute;
   left: 40%;
-  top: 63%;
+  top: 67%;
 }
 
+/* add-question - icon top right*/
 .add-question-div {
   color: var(--whiteColor);
   display: grid;
