@@ -2,6 +2,7 @@ import React from 'react';
 import { useGlobalContext } from '../context';
 import { AiOutlineSave } from 'react-icons/ai';
 import { Redirect } from 'react-router-dom';
+import useToken from '../components/useToken';
 
 const AddNewQuestion = () => {
   const {
@@ -9,6 +10,8 @@ const AddNewQuestion = () => {
     newQuestionState,
     dispatch,
   } = useGlobalContext();
+
+  const { token } = useToken();
 
   const [reRoute, setReRoute] = React.useState(false);
 
@@ -71,7 +74,8 @@ const AddNewQuestion = () => {
     }
   }, [newQuestionState, newQuestionDispatch, dispatch]);
 
-  if (!reRoute)
+  if (!token) return <Redirect to='/login'></Redirect>;
+  else if (!reRoute)
     return (
       <main className='new-question-main'>
         <form className='new-question-form' onSubmit={handleSubmit}>
