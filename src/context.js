@@ -5,7 +5,7 @@ import newQuestionReducer from './newQuestionReducer';
 
 const getLocalStorageHighscores = () => {
   let highscores = localStorage.getItem('highscores');
-  localStorage.clear();
+  // localStorage.clear();
   if (highscores) {
     return JSON.parse(highscores);
   } else {

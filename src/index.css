@@ -69,21 +69,34 @@ body {
   font-size: 20px;
 }
 
-.nav-links li a {
+.nav-links li a,
+.nav-links li button {
   text-decoration: none;
   display: block;
   background-color: var(--navBackgroundColor);
   color: var(--whiteColor);
-  padding: 60px;
+  padding: 40px;
   width: 100%;
+  height: 100%;
   opacity: 90%;
   margin: 0px;
   box-sizing: border-box;
+  border: none;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links li button:hover {
   background-color: var(--radioColor);
   opacity: 100%;
+}
+
+.nav-links li form {
+  height: 100%;
+}
+
+.nav-links li button .navbar-logout-icon {
+  height: 20px;
+  width: 20px;
 }
 
 /* radio - difficulty*/
@@ -123,7 +136,7 @@ body {
   border: none;
   background: transparent;
   /* margin-top: 100px; */
-  padding: 50px;
+  padding: 40px;
   position: absolute;
   bottom: 0;
   font-size: 30px;
@@ -671,9 +684,13 @@ select::-ms-expand {
   color: var(--whiteColor);
 }
 
-.millionaire-options ul li a:hover,
-.millionaire-options ul li button:hover {
+.millionaire-options ul li a:hover {
   background-color: var(--correctColor);
+  opacity: 90%;
+}
+
+.millionaire-options ul li button:hover {
+  background-color: var(--incorrectColor);
   opacity: 90%;
 }
 
@@ -711,8 +728,8 @@ select::-ms-expand {
   color: var(--whiteColor);
   display: grid;
   position: absolute;
-  top: 19%;
-  right: 2%;
+  top: 14.5%;
+  right: 1%;
   padding: 0;
   margin: 0;
 }
@@ -1048,5 +1065,90 @@ select::-ms-expand {
   color: #c0c0c0;
   height: 50px;
   width: 40px;
+  padding: 10px;
+}
+
+/* login - page */
+.login-main {
+  background-image: var(--rightToLeftBackImage);
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  color: var(--whiteColor);
+}
+
+.login-main form {
+  margin: 10% 20%;
+}
+
+.login-main label {
+  display: flex;
+  padding: 30px;
+  font-size: 22px;
+  margin-left: 5%;
+}
+
+.login-main label span {
+  margin-right: 1.25rem;
+  padding: 6px 10px;
+  margin-top: 5px;
+}
+
+.login-main label input {
+  width: 20rem;
+  height: 1.75rem;
+  font-size: 18px;
+  padding: 6px 10px;
+  background-color: transparent;
+  color: var(--whiteColor);
+  border: var(--borderColor) 3px solid;
+}
+
+.login-main .login-btn-container {
+  background-color: inherit;
+  margin-left: 25%;
+}
+
+.login-main .login-btn-container .login-btn {
+  color: var(--whiteColor);
+  background-color: inherit;
+  min-width: 18rem;
   padding: 20px;
+  font-size: 16px;
+  border: var(--borderColor) 2px solid;
+}
+
+.login-main .login-btn-container .login-btn:hover {
+  background-color: var(--correctColor);
+  opacity: 90%;
+}
+
+.login-main .login-btn-container .login-btn .icon-unlock {
+  margin-right: 0.5rem;
+}
+
+.login-main .registration-div {
+  position: absolute;
+  right: 2%;
+  top: 5%;
+}
+
+.login-main .registration-div a {
+  color: var(--whiteColor);
+  padding: 20px;
+  text-decoration: none;
+  font-size: 18px;
+  border: var(--borderColor) 2px solid;
+}
+
+.login-main .registration-div a:hover {
+  background-color: var(--correctColor);
+  opacity: 90%;
+}
+
+.login-main .registration-div a .registration-icon {
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
 }

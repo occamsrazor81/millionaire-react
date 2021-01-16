@@ -15,6 +15,8 @@ import NewHighScore from './pages/NewHighScore';
 import QuestionList from './pages/QuestionList';
 import EditQuestion from './pages/EditQuestion';
 import AddNewQuestion from './pages/AddNewQuestion';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -47,6 +49,12 @@ function App() {
         </Route>
         <Route path='/add_question'>
           <AddNewQuestion />
+        </Route>
+        <Route path='/login'>
+          <Login />
+        </Route>
+        <Route path='/register'>
+          <Register />
         </Route>
         <Route path='*'>
           <Error />
